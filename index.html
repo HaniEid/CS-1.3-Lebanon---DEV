@@ -44,7 +44,7 @@ body {
     border-radius: 10px;
 }
 #booking {
-    width: 400px;
+    width: 200px;
 }
 input, button {
     width: 100%;
@@ -435,8 +435,8 @@ function timeToMinutes(t){ let [h,m]=t.split(":").map(Number); if(h<8)h+=24; ret
 // ---------- Generate times (hours only) ----------
 function generateTimes() {
     timeButtonsContainer.innerHTML = "";
-    for(let h=20; h<=23; h++){ addTimeButton(h); }
-    for(let h=0; h<=3; h++){ addTimeButton(h); }
+    for(let h=19; h<=23; h++){ addTimeButton(h); }
+    for(let h=0; h<=2; h++){ addTimeButton(h); }
 }
 function addTimeButton(hour) {
     const t = `${String(hour).padStart(2,'0')}:00`;
@@ -611,4 +611,5 @@ loadMatches(matches => {console.log(matches); renderAllMatches(matches)});
   Developed by H A V O C | &copy; 2025 All rights reserved
 </footer>
 </html>
+
 
