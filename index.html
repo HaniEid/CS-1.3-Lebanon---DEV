@@ -393,13 +393,23 @@ window.toggleServer = function(i, checkbox) {
        checkbox.checked = !checkbox.checked;
        return;
    } 
+
     const serverBtn = document.getElementById("server" + i + "Btn");    
+
+
+    enabledServers[i] = !enabledServers[i];
+   
+    if(!enabledServers[i]){
     serverBtn.disabled = true;
     // Change the color and style
     serverBtn.style.backgroundColor = "grey";  // background
     serverBtn.style.color = "white";           // text color
     serverBtn.style.cursor = "not-allowed";    // cursor style
-    enabledServers[i] = !enabledServers[i];
+    }else{
+    serverBtn.disabled = false;
+    serverBtn.style.backgroundColor = "#228B22";
+    serverBtn.style.cursor = "pointer";
+    }
     console.log(enabledServers);
     renderServerTables();
     renderAllMatches(matches);
