@@ -97,7 +97,7 @@ button:hover:not(:disabled) { opacity: 0.9; }
     display: grid;
     #grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     width: 100%;
 }
 
@@ -112,7 +112,9 @@ button:hover:not(:disabled) { opacity: 0.9; }
 .server-card {
     background: rgba(0,0,0,0.85);
     border-radius: 10px;
-    padding: 15px;
+    padding: 15px;    
+    flex: 1 1 250px; /* grows/shrinks, minimum 250px */
+    max-width: 800px; /* optional max width */
 }
 table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
 th, td { border: 1px solid #555; padding: 8px; text-align: left; }
