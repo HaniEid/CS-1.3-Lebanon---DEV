@@ -52,7 +52,7 @@ body {
     gap: 20px;
     #justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     #flex-wrap: wrap;
@@ -94,16 +94,17 @@ button:hover:not(:disabled) { opacity: 0.9; }
     text-align: center;
 }
 .time-button:disabled { background-color: grey; cursor: not-allowed; border: 1px solid grey; opacity: 0.6; }
-.server-buttons { display: flex; gap: 10px; margin-bottom: 0px; margin-top: 25px; width: 100%;}
+.server-buttons { display: flex; gap: 10px; margin-bottom: 0px; margin-top: 25px; width: 100%; flex-wrap: wrap;}
 .server-button {
-    padding: 10px 20px 10px 20px;
-    font-size: 16px;
+    #padding: 10px 20px 10px 20px;
+    font-size: 15px;
     background-color: #228B22;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     color: white;
     gap: 20px;
+    flex: 1 1 auto;  
 }
 .server-button.selected { border: 3px solid #ffbf00; }
 .server-tables2 { 
@@ -277,7 +278,7 @@ input:checked + .slider:before {
 .box {
     background: black;
     opacity: 0.85;
-    #padding: 100px;
+    padding: 30px;
     #flex: 1;          /* both divs become equal size */
     margin: 0;
     gap: 0;
