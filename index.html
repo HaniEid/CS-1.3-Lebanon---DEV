@@ -94,7 +94,7 @@ button:hover:not(:disabled) { opacity: 0.9; }
     text-align: center;
 }
 .time-button:disabled { background-color: grey; cursor: not-allowed; border: 1px solid grey; opacity: 0.6; }
-.server-buttons { display: flex; gap: 10px; margin-bottom: 0px; margin-top: 25px; width: 100%; flex-wrap: wrap;}
+.server-buttons { display: flex; gap: 10px; margin-bottom: 0px; margin-top: 25px; width: 100%; #flex-wrap: wrap;}
 .server-button {
     #padding: 10px 20px 10px 20px;
     font-size: 15px;
@@ -104,7 +104,7 @@ button:hover:not(:disabled) { opacity: 0.9; }
     cursor: pointer;
     color: white;
     gap: 20px;
-    flex: 1 1 auto;  
+    flex: 0 1 auto;  
 }
 .server-button.selected { border: 3px solid #ffbf00; }
 .server-tables2 { 
@@ -632,7 +632,7 @@ loadMatches(matches => {console.log(matches); renderAllMatches(matches)});
 
 </script>
 </body>
-<footer style="text-align:center; padding:20px; margin-top:50px; font-size:0.8rem; color:black;">
+<footer style="text-align:center; padding:20px; margin-top:10px; margin-bottom: 30px; font-size:0.8rem; color:black;">
   Developed by H A V O C | &copy; 2025 All rights reserved
 </footer>
 </html>
