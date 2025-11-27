@@ -119,7 +119,7 @@ button:hover:not(:disabled) { opacity: 0.9; }
     border-radius: 10px;
     padding: 15px;    
     flex: 1 1 250px; /* grows/shrinks, minimum 250px */
-    max-width: 800px; /* optional max width */
+    #max-width: 800px; /* optional max width */
 }
 table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
 th, td { border: 1px solid #555; padding: 8px; text-align: left; }
@@ -269,6 +269,16 @@ input:checked + .slider:before {
     flex: 1;          /* both divs become equal size */
     gap: 0;
 }
+.server-content{
+    font-size:20px;
+}
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+}
 </style>
 
 <!-- Firebase compat libs (easier integration) -->
@@ -280,7 +290,7 @@ input:checked + .slider:before {
 <body>
 
 
-
+<div class="page-wrapper">
 <div id="loadingOverlay" style="display:none;">
     <div class="spinner"></div>
 </div>
@@ -309,7 +319,7 @@ input:checked + .slider:before {
     </div>  
 </div>
 <div class="server-tables" id="serverTables"></div>
-
+</div>
 
 <script type="module">
 
