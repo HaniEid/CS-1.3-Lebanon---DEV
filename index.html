@@ -15,20 +15,24 @@ body {
     min-height: 100vh;
     background-color: grey;
     color: white;
-    #display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 .page-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 30px;
-    margin: 30px 0 20px;
+    font-size: 60px;
+    margin: 0;
     color: #ffcc00;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;      /* hides overflow */
+    text-overflow: ellipsis; 
+    padding: 0;
 }
 .main-container {
-    #display: flex;
-    #gap: 20px;
+    display: flex;
+    gap: 20px;
     justify-content: center;
     align-items: flex-start;
     width: 100%;
@@ -39,10 +43,9 @@ body {
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 10px;
-	width: 100%;
 }
 #booking {
-    width: 100%;
+    width: 600px;
 }
 input, button {
     width: 100%;
@@ -92,10 +95,19 @@ button:hover:not(:disabled) { opacity: 0.9; }
 }
 .server-tables {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    #grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
     gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     width: 100%;
 }
+
+@media (min-width: 1200px) {
+  .server-tables {
+    grid-template-columns: repeat(3, 1fr); /* 2 columns on big screens */
+  }
+}
+
+
 .server-card2 { background: rgba(0,0,0,0.85); border-radius: 10px; padding: 15px; min-width: 250px; flex: 1; }
 .server-card {
     background: rgba(0,0,0,0.85);
@@ -105,7 +117,7 @@ button:hover:not(:disabled) { opacity: 0.9; }
 table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
 th, td { border: 1px solid #555; padding: 8px; text-align: left; }
 th { background-color: #222; color: #ffcc00; }
-.delete { background-color: #ff3b3b; border: none; padding: 5px 10px; border-radius: 100px; color: white; cursor: pointer; width: 30%; }
+.delete { background-color: #ff3b3b; border: none; padding: 5px 10px; border-radius: 100px; color: white; cursor: pointer; width: 70%; }
 .delete:hover { opacity: 0.8; }
 #bookMatchBtn{background-color: #228B22; }
 #team1, #team2 {font-size: 20px; width: 70%; margin-left:50px; }
@@ -202,6 +214,53 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.wiss-signature1 {
+    position: fixed;
+    top: 12px;
+    right: 15px;
+    font-size: 13px;
+    font-family: "Courier New", monospace;
+    opacity: 0.45;
+    letter-spacing: 2px;
+    font-weight: 600;
+    user-select: none;
+}
+.wiss-console {
+    #position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    color: #00ff00;
+    padding: 4px 8px;
+    font-family: "Consolas", monospace;
+    font-size: 12px;
+    opacity: 0.85;
+    margin-bottom: 60px;
+}
+.row {
+    display: flex;
+    gap: 0px;        /* space between them */
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+.box {
+    background: black;
+    opacity: 0.85;
+    padding: 0;
+    #flex: 1;          /* both divs become equal size */
+    margin: 0;
+    gap: 0;
+    display: block;
+}
+
+.box1 {
+    #background: lightgrey;
+    padding: 10px;
+    flex: 1;          /* both divs become equal size */
+    gap: 0;
+}
 </style>
 
 <!-- Firebase compat libs (easier integration) -->
@@ -217,8 +276,12 @@ input:checked + .slider:before {
 <div id="loadingOverlay" style="display:none;">
     <div class="spinner"></div>
 </div>
-<h1 class="page-title">Counter-Strike 1.3 Lebanon</h1>
 
+<div class="row">
+	<div class="box"><h1 class="page-title">Counter-Strike 1.3 Lebanon</h1></DIV>
+       	<!--<div class="box1" id="terminal">by WISS ✦</div>-->
+</div>
+<div class="wiss-console">:: by WISS ::</div>
 <div class="main-container">
     <div id="booking" class="card">
         <h2 id="bookMatchTitle">Book a Match</h2>
@@ -433,8 +496,8 @@ function timeToMinutes(t){ let [h,m]=t.split(":").map(Number); if(h<8)h+=24; ret
 // ---------- Generate times (hours only) ----------
 function generateTimes() {
     timeButtonsContainer.innerHTML = "";
-    for(let h=19; h<=23; h++){ addTimeButton(h); }
-    for(let h=0; h<=2; h++){ addTimeButton(h); }
+    for(let h=20; h<=23; h++){ addTimeButton(h); }
+    for(let h=0; h<=3; h++){ addTimeButton(h); }
 }
 function addTimeButton(hour) {
     const t = `${String(hour).padStart(2,'0')}:00`;
@@ -609,14 +672,3 @@ loadMatches(matches => {console.log(matches); renderAllMatches(matches)});
   Developed by H A V O C | &copy; 2025 All rights reserved
 </footer>
 </html>
-
-
-
-
-
-
-
-
-
-
-
