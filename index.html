@@ -22,14 +22,15 @@ body {
 }
 .page-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(20px, 6vw, 60px);
+    font-size: clamp(20px, 6vw, 80px);
     margin: 0;
     color: #ffcc00;
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;      /* hides overflow */
-    text-overflow: ellipsis; 
+    white-space: normal;      /* allow wrapping */
+    overflow: visible;        /* don't hide text */
+    text-overflow: unset;     
     padding: 0;
+    line-height: 1.2;         /* optional: adjust spacing */
 }
 .main-container {
     display: flex;
@@ -254,11 +255,12 @@ input:checked + .slider:before {
 .box {
     background: black;
     opacity: 0.85;
-    padding: 0;
+    padding: 30px;
     #flex: 1;          /* both divs become equal size */
     margin: 0;
     gap: 0;
     display: block;
+    border-radius: 30px;
 }
 
 .box1 {
