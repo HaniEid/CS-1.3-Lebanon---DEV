@@ -18,10 +18,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 .page-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 30px;
+    font-size: clamp(20px, 6vw, 60px);
     margin: 0;
     color: #ffcc00;
     text-align: center;
@@ -105,6 +106,9 @@ button:hover:not(:disabled) { opacity: 0.9; }
   .server-tables {
     grid-template-columns: repeat(3, 1fr); /* 2 columns on big screens */
   }
+   body {
+        padding: 10px;
+    }
 }
 
 
@@ -674,4 +678,3 @@ loadMatches(matches => {console.log(matches); renderAllMatches(matches)});
   Developed by H A V O C | &copy; 2025 All rights reserved
 </footer>
 </html>
-
