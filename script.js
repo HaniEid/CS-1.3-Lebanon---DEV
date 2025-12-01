@@ -226,6 +226,13 @@ window.resetAllMatches = async function(){
   }
 // ---------- Book match (writes to Firebase) ----------
 async function bookMatch() {
+    if(selectedServer === 'Ghadab'){
+        const userInput = prompt("Enter Admin-Ghadab Password:");
+        if (userInput !== passwordGhadab) {
+            alert("Wrong password!");
+            return;
+        } 
+    }
     const t1 = document.getElementById("team1").value.trim();
     const t2 = document.getElementById("team2").value.trim();
     if(!t1 || !t2 || !selectedTime || !selectedServer) { 
